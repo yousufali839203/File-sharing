@@ -22,7 +22,7 @@ export const downloadImage = async (request, response) => {
     if (!file) {
       return response.status(404).json({ error: "File not found" });
     }
-    file.downloadContent++; // Assuming it's downloadCount, not downloadContent
+    file.downloadContent++;
     await file.save();
     response.download(file.path, file.name);
   } catch (error) {

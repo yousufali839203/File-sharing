@@ -3,7 +3,7 @@ const API_URL = "";
 
 export const uploadFile = async (data) => {
   try {
-    let response = await axios.post(`${API_URL}/upload`, data);
+    let response = await axios.post(`/upload`, data);
     return response.data;
   } catch (error) {
     console.error("Error while calling api " + error.message);
