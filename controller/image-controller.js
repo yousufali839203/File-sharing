@@ -9,12 +9,10 @@ export const uploadImage = async (request, response) => {
   console.log(request);
   try {
     const file = await File.create(fileobj);
-    response
-      .status(200)
-      .json({ path: `https://naughty-cloak.cyclic.app/file/${file._id}` });
+    response.status(200).json({ path: `${file._id}` });
   } catch (error) {
     console.log(error.message);
-    response.status(500).json({ error: error.message });
+    response.status(600).json({ error: error.message });
   }
 };
 
